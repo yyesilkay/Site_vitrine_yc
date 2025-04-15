@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Spartan", sans-serif;
+
+}
+.navbar {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px 60px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    background-color: rgb(34,34,34);
+}
+
+.presentation{
+    display:flex;
+    align-items: center;
+}
+
+.presentation .logo{
+    height: 80px;
+
+}
+
+.presentation .nom{
+    color: #fff;
+    font-size: 1.5rem;
+
+
+}
+
+#search-container{
+    display: flex;
+    align-items: center;
+
+}
+
+.barre {
+    padding: 10px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    width: 400px;
+}
+
+#search-container button{
+    background-color: #555;
+    border-radius: 3px;
+    padding: 10px;
+    margin-left: 10px;
+    cursor: pointer;
+    color: #fff;
+    width: 50px;
+
+}
+
+#list {
+    list-style-type: none;
+    display: flex;
+}
+
+#list li{
+    margin-left: 25px;
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+}
+
+#list li a{
+    color:#fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    transition: border-color 0.3s;
+    border-bottom: 2px solid transparent;
+    padding: 5px 0;
+}
+
+#list li i{
+    display: block;
+    padding: 5px 0;
+    color:#fff;
+}
+
+#list li a:hover,
+#list li.a.active {
+    border-bottom: 5px solid rgb(46, 134, 193);
+    border-radius: 3px;
+ 
+
+}
+
+
+
+
+
+
+

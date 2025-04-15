@@ -1,0 +1,68 @@
+@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    transition: .3s;
+    color: #fff;
+
+}
+
+ul , li{
+    list-style-type: none;
+}
+
+#hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 90vh;
+    width: 100%;
+    padding: 0 80px;
+    background-color: #f8f9fa; /* Couleur de fond optionnelle */
+}
+
+#hero .content {
+    max-width: 50%;
+    color: rgb(34,34,34);
+}
+
+#hero .content h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+#hero .content p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+}
+
+#hero .content .btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: rgb(34,34,34);
+    color: white;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
+}
+
+#hero .content .btn:hover {
+    background-color: rgb(34,34,34);
+}
+
+#hero .image {
+   
+     flex: 1;
+    display: flex;
+    justify-content: flex-end; 
+}
+
+#hero .image img {
+    width: 100%; 
+    height: auto;
+}

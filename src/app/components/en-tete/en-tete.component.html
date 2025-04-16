@@ -1,46 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css' rel='stylesheet'>
-    <title>Document</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet">
 </head>
-<body>
+<header class="navbar">
+    <div class="presentation">
+    <a href="#"><img src="./assets" class="logo" alt=""></a>
+    <h2 class="nom">Yesil Conseil</h2>
+    </div>
+    <div id="search-container">
+        <input  class="barre" type="text" placeholder="Rechercher ...">
+        <button>
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+    </div>
 
-    <header class="navbar">
-        <div class="presentation">
-        <a href="#"><img src="./assets" class="logo" alt=""></a>
-        <h2 class="nom">Yesil Conseil</h2>
-        </div>
-        <div id="search-container">
-            <input  class="barre" type="text" placeholder="Rechercher ...">
-            <button>
-                <i class="fas fa-search"></i>
-            </button>
-        </div>
-
-        <div>
-            <ul id="list">
-                <li>
-                    <i class="fa-solid fa-house"></i>
-                    <a class="active" routerLink="/home">Accueil</a>
-                </li>
-                <li>
-                    <i class="fa-solid fa-box-open"></i>
-                    <a href="#">Nos produits</a>
-                </li>
-                <li>
-                    <i class="fa-regular fa-building"></i>
-                    <a href="#">Qui nous sommes</a>
-                </li>
-                <li>
-                    <i class="fa-regular fa-circle-user"></i>
-                    <a routerLink="/contact">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </header>
-    
-</body>
-</html>
+    <div>
+        <ul id="list">
+            <li>
+                <i class="fa-solid fa-house"></i>
+                <a class="active" routerLink="/home">Accueil</a>
+            </li>
+            <li>
+                <i class="fa-solid fa-box-open"></i>
+                <a href="#">Nos produits</a>
+            </li>
+            <li>
+                <i class="fa-regular fa-building"></i>
+                <a href="#">Qui nous sommes</a>
+            </li>
+            <li>
+                <i class="fa-regular fa-circle-user"></i>
+                <a routerLink="/contact">Contact</a>
+            </li>
+        </ul>
+    </div>
+</header>

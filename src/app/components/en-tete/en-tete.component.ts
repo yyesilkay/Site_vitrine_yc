@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
-import { HomeComponent } from '../home/home.component';
+
 
 @Component({
   selector: 'app-en-tete',
@@ -9,5 +9,7 @@ import { HomeComponent } from '../home/home.component';
   styleUrl: './en-tete.component.css'
 })
 export class EnTeteComponent {
+
+
 
 }

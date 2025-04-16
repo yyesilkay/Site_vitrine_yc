@@ -4,7 +4,7 @@ import { FooterComponent } from '../footer/footer.component';
 
 @Component({
   selector: 'app-contact',
-  imports: [EnTeteComponent, FooterComponent],
+  imports: [],
   templateUrl: './contact.component.html',
   styleUrl: './contact.component.css'
 })

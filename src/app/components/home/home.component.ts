@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
-import { EnTeteComponent } from '../en-tete/en-tete.component';
-import { FooterComponent } from '../footer/footer.component';
+
 import { RouterModule } from '@angular/router';
 
 @Component({

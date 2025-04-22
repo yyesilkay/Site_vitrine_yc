@@ -1,11 +1,11 @@
 import { Routes } from '@angular/router';
 
 import { HomeComponent } from './components/home/home.component';
-import { ProduitComponent } from './components/produit/produit.component';
-import { NousComponent } from './components/nous/nous.component';
+import { ProductComponent } from './components/produit/product.component';
+import { AboutUsComponent } from './components/AboutUs/aboutus.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
-import { DevisComponent } from './components/devis/devis.component';
+import { EstimateRequest } from './components/estimaterequest/estimaterequest.component';
 
 
 export const routes: Routes = [{
@@ -22,23 +22,23 @@ export const routes: Routes = [{
     component: HomeComponent
 },
 {
-    path: 'produits',
-    component: ProduitComponent
+    path: 'product',
+    component: ProductComponent
 },
 {
-    path: 'qui_nous_sommes',
-    component: NousComponent
+    path: 'about_us',
+    component: AboutUsComponent
 },
 {
     path: 'contact',
     component: ContactComponent
 },
 {
+    path: 'devis',
+    component: EstimateRequest
+},{
     path: 'faq',
     component: FaqComponent
-},{
-    path: 'devis',
-    component: DevisComponent
 }
 
 

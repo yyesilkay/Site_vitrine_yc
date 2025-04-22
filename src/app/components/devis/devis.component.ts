@@ -1,13 +1,12 @@
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
-
 @Component({
-  selector: 'app-header',
+  selector: 'app-devis',
   imports: [RouterModule],
-  templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  templateUrl: './devis.component.html',
+  styleUrl: './devis.component.css'
 })
-export class HeaderComponent {
+export class DevisComponent {
 
 }

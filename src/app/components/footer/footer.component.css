@@ -1,0 +1,107 @@
+
+
+a{
+    text-decoration: none;
+    transition: .3s;
+    color: #fff;
+
+}
+
+ul , li{
+    list-style-type: none;
+}
+
+footer{
+    background-color: rgb(34,34,34);
+    color: #fff;
+}
+
+.footer_info{
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    padding: 50px 0;
+
+
+}
+
+.footer_info .footer_width{
+    padding: 0 15px;
+}
+
+.footer_info h2{
+    margin-bottom: 20px;
+}
+
+.footer_info p{
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.about , .contact {
+    width: 40%;
+}
+
+.link {
+    width: 20%;
+}
+
+.social-media {
+    margin-top: 30px;
+}
+
+.social-media ul{
+    display: flex;
+}
+
+.social-media ul li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 50px;
+    width: 50px;
+    height: 50px;
+    padding: 12px;
+    background-color: transparent;
+    border: 1px solid #fff;
+    text-align: center;
+
+}
+.social-media ul li a:hover{
+    color:black;
+    background-color: #fff;
+
+}
+
+.link ul li a {
+    display: block;
+    margin-bottom: 15px;
+    font-size: 20px;
+    transition: border-color 0.3s;
+    border-bottom: 2px solid transparent;
+}
+
+.link ul li a:hover{
+    border-bottom: 5px solid rgb(46, 134, 193);
+    border-radius: 3px;
+}
+
+.Contact ul li{
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.Contact ul li span{
+    margin-right: 15px;
+
+}
+
+.copy-right{
+    padding: 15px 0;
+    text-align: center;
+    background-color: rgb(60,60,60);
+
+
+}

@@ -1,9 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;500;600;700;800;900&display=swap");
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+
 
 a{
     text-decoration: none;
@@ -21,7 +16,7 @@ ul , li{
     align-items: center;
     justify-content: space-between;
     height: 90vh;
-    width: 100%;
+    width: 95%;
     padding: 0 80px;
     background-color: #f8f9fa; /* Couleur de fond optionnelle */
 }
@@ -42,17 +37,36 @@ ul , li{
 }
 
 #hero .content .btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: rgb(34,34,34);
-    color: white;
-    border-radius: 5px;
-    font-size: 1rem;
-    transition: background-color 0.3s ease;
+    display:flex;
+    justify-content: left;
+    gap: 20px;
+    margin-top: 30px;
 }
 
-#hero .content .btn:hover {
+#hero .content .btn a{
+    text-decoration: none;
+}
+
+#hero .content .btn button{
     background-color: rgb(34,34,34);
+    color: white;
+    font-size: 16px;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+#hero .content .btn button:hover{
+    background-color: rgb(34,34,34); 
+    transform: translateY(-5px)
+}
+
+#hero .content .btn button:active {
+    background-color: #1c5980; 
+    transform: translateY(0);
+
 }
 
 #hero .image {
@@ -65,4 +79,146 @@ ul , li{
 #hero .image img {
     width: 100%; 
     height: auto;
+    margin-right: 50px;
+    
+
+}
+
+.section{
+    padding: 80px 40px;
+    text-align: center;
+}
+
+
+.dark-section{
+    background-color: rgb(34,34,34);
+    color: #fff;
+    text-align: center;
+}
+
+.light-section{
+    background-color: #fff;
+    color: rgb(34,34,34);
+}
+
+.section h2{
+    font-size: 2.5rem;
+    margin-bottom: 30px;
+}
+
+section p{
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 30px auto;
+    line-height: 1.6;
+}
+
+.section a button{
+    text-decoration: none;
+}
+.section a button{
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: #fff;
+    color:  rgb(34,34,34);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+}
+
+.section a button:hover{
+    background-color: #fff ;
+    transform: translateY(-5px);
+}
+
+.section a button:active{
+    background-color: rgb(34, 34, 34);
+    transform: translateY(0);
+}
+
+
+
+
+.grid{
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+    display:grid;
+
+}
+
+.service-box{
+    background-color: rgba(34,34,34,0.05);
+    padding: 30px;
+    border-radius: 8px;
+    border: 1px solid rgba(34,34,34,0.1);
+    cursor: pointer;
+    transform: background-color 0.3s ease ;
+
+}
+
+.service-box:hover{
+    transform: translateY(-10px);
+}
+
+.service-box h3{
+    margin-bottom: 20px;
+}
+
+.light-section .service-box{
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
+
+}
+
+.stats{
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.stats div{
+    text-align: center;
+}
+.stats h3{
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+   
+}
+
+.cta-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+    color: rgb(34,34,34);
+}
+
+
+.cta-buttons a button {
+    padding: 12px 25px;
+    font-size: 1rem;
+    background-color: rgb(34, 34, 34);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+
+.cta-buttons a button:hover {
+  background-color: rgb(34, 34, 34);
+  transform: translateY(-5px);
+}
+
+
+.cta-buttons a button:active {
+  background-color: rgb(34, 34, 34);
+  color: white;
+  transform: translateY(0);
 }

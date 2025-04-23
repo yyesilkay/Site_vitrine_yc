@@ -22,19 +22,19 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
   formValueSubscription : Subscription | null = null ;
   
   formGroup = this.fb.group({
-    name: ['', Validators.required],
-    prenom : ['', Validators.required],
-    adresse: ['', Validators.required],
-    email: ['' , [Validators.required , Validators.email]],
-    telephone: ['', [Validators.required,Validators.pattern(/^[0-9]{10}$/) ]],
-    departement: ['', Validators.required],
-    numero_dep: [ 0, [Validators.required, Validators.min(1)]],
-    siteVitrine: [false],
-    siteEcommerce: [false],
-    applicationMobile:[false],
-    maintenance: [false],
-    questions: [''],
-    commentaire: ['']
+      lastName: ['', Validators.required],
+      firstName: ['', Validators.required],
+      address: ['', Validators.required],
+      email: ['', [Validators.required, Validators.email]],
+      phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
+      department: ['', Validators.required],
+      departmentNumber: [1, [Validators.required, Validators.min(1)]],
+      showcaseSite: [false],
+      ecommerceSite: [false],
+      mobileApp: [false],
+      maintenance: [false],
+      details: [''],
+      comment: ['']
   });
 
   ngOnInit(): void {
@@ -52,7 +52,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
       return formControl?.invalid && (formControl?.dirty || formControl.touched);
   }
   
-  submit(event : Event){
+  onSubmit(event : Event){
     event.preventDefault();
 
     if(this.formGroup.valid){
@@ -63,21 +63,20 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
     }
 
-    this.retourner();
+    this.goBack();
   }
 
-  effacer() {
+  clear(): void {
     this.formGroup.reset({
-      numero_dep: 1,
-      siteVitrine: false,
-      siteEcommerce: false,
-      applicationMobile:false,
-      maintenance: false,
-
+      departmentNumber: 1,
+      showcaseSite: false,
+      ecommerceSite: false,
+      mobileApp: false,
+      maintenance: false
     });
-   
   }
-  retourner(){
+  
+  goBack(){
     this.router.navigate(['/home']);
 
   }

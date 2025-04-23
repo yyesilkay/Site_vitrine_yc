@@ -1,0 +1,90 @@
+#contact-details {
+    display:flex;
+    justify-content: space-between;
+    padding: 30px;
+    
+}
+.details, .map{
+    flex:1;
+}
+
+.details {
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.details ul{
+    list-style-type: none;
+    padding: 0;
+}
+
+.details h2{
+    color: rgb(34,34,34);
+}
+
+.details ul li{
+    display:flex;
+    align-items: center;
+    margin-bottom: 10px;
+
+}
+
+.details ul li i{
+    margin-right: 10px;
+
+}
+.details ul li p{
+    margin-left: 10px;
+}
+
+.map iframe{
+    width: 100%;
+    height: 450px;
+    border: 2px solid #555;
+}
+
+#form-details {
+    display: flex;
+    justify-content: space-between;
+    margin: 30px;
+    padding: 80px;
+    border: 2px solid #e1e1e1;
+
+}
+
+#form-details form{
+    width: 65%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+#form-details form input,
+#form-details form textarea {
+    width: 100%;
+    padding: 30px 33px;
+    outline: none;
+    margin-bottom: 20px;
+    font-size: 16px;
+    border: 2px solid rgb(34,34,34);;
+}
+
+#form-details form button{
+    margin-top: 10px;
+    background-color: rgb(34,34,34);;
+    color: white;
+    font-size: 15px;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    outline: none;
+    cursor: pointer;
+    transition: transform 0.5s;
+    display:flex;
+    justify-content: center;
+    
+}
+
+#form-details form button:hover{
+    transform: scale(1.05);
+}

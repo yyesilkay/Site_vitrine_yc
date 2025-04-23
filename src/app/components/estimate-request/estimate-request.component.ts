@@ -7,7 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
-import { ServiceType } from './service-type.enum';
+import { ServiceType } from './models/service-type.enum';
 
 @Component({
   selector: 'app-estimate-request',
@@ -48,6 +48,8 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formValueSubscription = this.formGroup.valueChanges.subscribe(value => {
+      // TODO: add logic to track form changes if needed
+
      
   });
       
@@ -65,8 +67,11 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     event.preventDefault();
 
     if(this.formGroup.valid){
+    // TODO: add mail service to send the request
     
 
+    }else{
+      console.log("Invalid form !");
     }
 
     this.goBack();

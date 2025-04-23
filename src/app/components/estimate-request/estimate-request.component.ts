@@ -56,10 +56,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     event.preventDefault();
 
     if(this.formGroup.valid){
-     /*
-    console.log("Form submitted", this.formGroup.value);
-    Retrieve the values after validation
-    */
+    
 
     }
 

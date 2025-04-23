@@ -4,7 +4,6 @@
     padding: 30px;
     
 }
-
 .details, .map{
     flex:1;
 }
@@ -18,9 +17,11 @@
     list-style-type: none;
     padding: 0;
 }
+
 .details h2{
     color: rgb(34,34,34);
 }
+
 .details ul li{
     display:flex;
     align-items: center;
@@ -87,6 +88,3 @@
 #form-details form button:hover{
     transform: scale(1.05);
 }
-
-
-

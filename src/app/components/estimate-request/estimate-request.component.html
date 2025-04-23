@@ -58,10 +58,9 @@
             <div class="form-section">
               <h2>Type de prestations</h2>
               <section class="checkbox">
-                <mat-checkbox formControlName="showcaseSite">Site Vitrine</mat-checkbox>
-                <mat-checkbox formControlName="ecommerceSite">Site E-commerce</mat-checkbox>
-                <mat-checkbox formControlName="mobileApp">Application Mobile</mat-checkbox>
-                <mat-checkbox formControlName="maintenance">Maintenance</mat-checkbox>
+                <mat-checkbox *ngFor="let service of serviceTypes" [formControlName]="service.key">
+                    {{service.label}}
+                </mat-checkbox>
               </section>
             </div>
           
@@ -87,7 +86,7 @@
               <button mat-button type="button" (click)="clear()">Effacer</button>
               <button mat-flat-button color="primary" type="submit" [disabled]="formGroup.invalid">Envoyer</button>
             </div>
-          </form>
+        </form>
   </div>
 </div>
 

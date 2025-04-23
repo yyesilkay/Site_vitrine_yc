@@ -7,6 +7,7 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatInputModule } from '@angular/material/input';
 import {MatCheckboxModule} from '@angular/material/checkbox';
 import { ReactiveFormsModule } from '@angular/forms';
+import { ServiceType } from './service-type.enum';
 
 @Component({
   selector: 'app-estimate-request',
@@ -21,6 +22,14 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
   formValueSubscription : Subscription | null = null ;
   
+  serviceTypes = [
+    {key : 'showcaseSite', label: ServiceType.ShowcaseSite},
+    {key : 'ecommerceSite', label: ServiceType.EcommerceSite},
+    {key : 'mobileApp', label: ServiceType.MobileApp},
+    {key : 'maintenance', label: ServiceType.Maintenance}
+  ];
+
+
   formGroup = this.fb.group({
       lastName: ['', Validators.required],
       firstName: ['', Validators.required],

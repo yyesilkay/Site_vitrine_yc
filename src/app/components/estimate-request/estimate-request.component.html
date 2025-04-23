@@ -1,1 +1,92 @@
-<p>estimate-request works!</p>
+<div class="devis-page">
+    <h1 class="title">Obtenez Votre Devis en Moins d'1 Minute !</h1>
+    
+    <div class="container">
+  
+        <form [formGroup]="formGroup" (submit)="onSubmit($event)" class="form-wrapper">
+
+            <div class="form-section">
+              <mat-form-field appearance="fill">
+                <mat-label>Nom</mat-label>
+                <input matInput formControlName="lastName" />
+                <mat-error *ngIf="isFieldValid('lastName')">Ce champ est obligatoire</mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Prénom</mat-label>
+                <input matInput formControlName="firstName" />
+                <mat-error *ngIf="isFieldValid('firstName')">Ce champ est obligatoire</mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Adresse</mat-label>
+                <input matInput formControlName="address" />
+                <mat-error *ngIf="isFieldValid('address')">Ce champ est obligatoire</mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Email</mat-label>
+                <input matInput formControlName="email" />
+                <mat-error *ngIf="isFieldValid('email')">Ce champ est obligatoire</mat-error>
+                <mat-error *ngIf="isFieldValid('email')">L'adresse n'est pas valide</mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Numéro de téléphone</mat-label>
+                <input matInput formControlName="phone" />
+                <mat-error *ngIf="isFieldValid('phone')">
+                  Ce champ est obligatoire et doit contenir 10 chiffres
+                </mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Département</mat-label>
+                <input matInput formControlName="department" />
+                <mat-error *ngIf="isFieldValid('department')">Ce champ est obligatoire</mat-error>
+              </mat-form-field>
+          
+              <mat-form-field appearance="fill">
+                <mat-label>Numéro de Département</mat-label>
+                <input matInput type="number" formControlName="departmentNumber" />
+                <mat-error *ngIf="isFieldValid('departmentNumber')">
+                  <span *ngIf="formGroup.get('departmentNumber')?.hasError('required')">Ce champ est obligatoire</span>
+                  <span *ngIf="formGroup.get('departmentNumber')?.hasError('min')">Ce champ doit être supérieur à 0</span>
+                </mat-error>
+              </mat-form-field>
+            </div>
+          
+            <div class="form-section">
+              <h2>Type de prestations</h2>
+              <section class="checkbox">
+                <mat-checkbox *ngFor="let service of serviceTypes" [formControlName]="service.key">
+                    {{service.label}}
+                </mat-checkbox>
+              </section>
+            </div>
+          
+            <div class="form-section">
+              <h2>Merci de préciser</h2>
+              <mat-form-field appearance="fill">
+                <mat-label>Merci de préciser :</mat-label>
+                <textarea matInput formControlName="details" rows="5"></textarea>
+              </mat-form-field>
+            </div>
+          
+            <div class="form-section">
+              <h2>Commentaire et questions</h2>
+              <mat-form-field appearance="fill">
+                <mat-label>Commentaire :</mat-label>
+                <textarea matInput formControlName="comment" rows="5"></textarea>
+              </mat-form-field>
+            </div>
+          
+            <div class="form-buttons">
+              <button mat-flat-button color="warn" type="button" (click)="goBack()">Revenir</button>
+              <span class="spacer"></span>
+              <button mat-button type="button" (click)="clear()">Effacer</button>
+              <button mat-flat-button color="primary" type="submit" [disabled]="formGroup.invalid">Envoyer</button>
+            </div>
+        </form>
+  </div>
+</div>
+

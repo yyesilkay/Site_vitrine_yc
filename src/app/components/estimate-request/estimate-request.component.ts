@@ -39,10 +39,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formValueSubscription = this.formGroup.valueChanges.subscribe(value => {
-      /*
-      console.log('Formulaire modifié :', value);
-      Affiche les valeurs à chaque fois qu'elle change
-      */
+     
   });
       
   }
@@ -50,8 +47,8 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
       this.formValueSubscription?.unsubscribe();
   }
 
-  isFieldValid(titre: string){
-      const formControl = this.formGroup.get(titre);
+  isFieldValid(title: string){
+      const formControl = this.formGroup.get(title);
       return formControl?.invalid && (formControl?.dirty || formControl.touched);
   }
   
@@ -59,10 +56,11 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     event.preventDefault();
 
     if(this.formGroup.valid){
-      /*
-      console.log("Formulaire soumis" , this.formGroup.value);
-      Obtenir les valeurs aprés la validation 
-      */
+     /*
+    console.log("Form submitted", this.formGroup.value);
+    Retrieve the values after validation
+    */
+
     }
 
     this.retourner();

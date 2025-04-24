@@ -7,12 +7,10 @@
 .details, .map{
     flex:1;
 }
-
 .details {
     margin-top: 60px;
     margin-left: 40px;
 }
-
 .details ul{
     list-style-type: none;
     padding: 0;

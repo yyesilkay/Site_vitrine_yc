@@ -5,8 +5,8 @@ import { HomeComponent } from './components/home/home.component';
 import { ContactComponent } from './components/contact/contact.component';
 import { FaqComponent } from './components/faq/faq.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
-import { ProductComponent } from './components/product/product.component';
 import { EstimateRequestComponent } from './components/estimate-request/estimate-request.component';
+import { ServicesComponent } from './components/services/services.component';
 
 
 export const routes: Routes = [{
@@ -23,8 +23,8 @@ export const routes: Routes = [{
     component: HomeComponent
 },
 {
-    path: 'product',
-    component: ProductComponent
+    path: 'services',
+    component: ServicesComponent
 },
 {
     path: 'about_us',

@@ -1,1 +1,22 @@
-<p>faq works!</p>
+<h1>Consultez la foire aux questions !</h1>
+
+<div class="container">
+    <img src="./assets/faq.png" alt="">
+</div>
+
+<div class="container-faq">
+
+    <div class="questions" *ngFor="let faq of faqs" (click)="toggleAnswer(faq)">
+        <div class="visible-pannel">
+            <h2> {{faq.question}}</h2>
+            <img [src] ="faq.isOpen ? './assets/minus.png' : './assets/croix.png '" alt="">
+        </div>
+
+
+        <div class="toggle-pannel" [class.open]="faq.isOpen" [innerHTML]="faq.answer">
+        <p>{{faq.answer}}</p>
+        </div>
+
+    </div>
+
+</div>

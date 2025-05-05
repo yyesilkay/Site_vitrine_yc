@@ -1,19 +1,35 @@
-<h1 class="text-center py-9 text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-800">Consultez la foire aux questions !</h1>
+<h1
+  class="text-center py-9 text-3xl sm:text-4xl lg:text-5xl font-bold text-zinc-800">
+  Consultez la foire aux questions !
+</h1>
 
 <div class="flex justify-center mb-10">
-  <img src="./assets/faq.png" alt="FAQ illustration" class="w-full max-h-[500px] sm:max-h-[700px] object-cover rounded-md mx-2">
+  <img
+    src="./assets/faq.png"
+    alt="FAQ illustration"
+    class="w-full max-h-[500px] sm:max-h-[700px] object-cover rounded-md mx-2" />
 </div>
 
 <div class="max-w-5xl mx-4 md:mx-8 lg:mx-auto space-y-6 mb-20">
-  <div *ngFor="let faq of faqs" (click)="toggleAnswer(faq)" class="bg-white border border-zinc-500 rounded-lg shadow p-5 cursor-pointer transition duration-300">
+  <div
+    *ngFor="let faq of faqs"
+    (click)="toggleAnswer(faq)"
+    class="bg-white border border-zinc-500 rounded-lg shadow p-5 cursor-pointer transition duration-300">
     <div class="flex justify-between items-center">
-      <h2 class="text-xl sm:text-2xl font-semibold text-zinc-800">{{ faq.question }}</h2>
-      <img [src]="faq.isOpen ? './assets/minus.png' : './assets/croix.png'" alt="toggle icon" class="w-5 h-5">
-    </div> 
+      <h2 class="text-xl sm:text-2xl font-semibold text-zinc-800">
+        {{ faq.question }}
+      </h2>
+      <img
+        [src]="faq.isOpen ? './assets/minus.png' : './assets/croix.png'"
+        alt="toggle icon"
+        class="w-5 h-5" />
+    </div>
 
-    <div class="overflow-hidden transition-all duration-300 mt-3 text-zinc-800 text-lg" [class.max-h-0]="!faq.isOpen" [class.max-h-96]="faq.isOpen">
+    <div
+      class="overflow-hidden transition-all duration-300 mt-3 text-zinc-800 text-lg"
+      [class.max-h-0]="!faq.isOpen"
+      [class.max-h-96]="faq.isOpen">
       <p [innerHTML]="faq.answer"></p>
     </div>
   </div>
 </div>
-

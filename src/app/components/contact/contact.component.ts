@@ -5,8 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-contact',
   imports: [RouterModule],
   templateUrl: './contact.component.html',
-  styleUrl: './contact.component.css'
+  styleUrl: './contact.component.css',
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}

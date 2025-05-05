@@ -37,7 +37,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
       email: ['', [Validators.required, Validators.email]],
       phone: ['', [Validators.required, Validators.pattern(/^[0-9]{10}$/)]],
       department: ['', Validators.required],
-      departmentNumber: [1, [Validators.required, Validators.min(1)]],
+     
       showcaseSite: [false],
       ecommerceSite: [false],
       mobileApp: [false],
@@ -79,7 +79,6 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
   clear(): void {
     this.formGroup.reset({
-      departmentNumber: 1,
       showcaseSite: false,
       ecommerceSite: false,
       mobileApp: false,

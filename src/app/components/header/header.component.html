@@ -1,33 +1,56 @@
-<header class="navbar">
-    <div class="presentation">
-    <a class="active" routerLink="/home"><img src="./assets/logo.jpg" class="logo" alt=""></a>
-    </div>
-    <div id="search-container">
-        <input  class="barre" type="text" placeholder="Rechercher ...">
-        <button>
-            <i class="fas fa-search"></i>
-        </button>
-    </div>
+<header class="flex z-10 justify-between items-center py-10 px-6 shadow-sm bg-zinc-800 relative">
+  
+  <div class="flex items-center">
+    <a class="active" routerLink="/home">
+      <img src="./assets/logo.jpg" class="h-16" alt="">
+    </a>
+  </div>
 
-    <div>
-        <ul id="list">
-            <li>
-                <i class="fa-solid fa-house"></i>
-                <a class="active" routerLink="/home">Accueil</a>
-            </li>
-            <li>
-                <i class="fa-solid fa-box-open"></i>
-                <a routerLink="/services">Nos services</a>
-            </li>
-            <li>
-                <i class="fa-regular fa-building"></i>
-                <a routerLink="/about_us">Qui nous sommes</a>
-            </li>
-            <li>
-                <i class="fa-regular fa-circle-user"></i>
-                <a routerLink="/contact">Contact</a>
-            </li>
-        </ul>
+
+  <div class="hidden lg:flex items-center">
+    <input class="p-2.5 rounded-md border border-zinc-400 w-[250px] md:w-[400px] bg-white" type="text" placeholder="Rechercher ...">
+    <button class="bg-stone-500 rounded-md p-2.5 ml-2.5 text-white w-12">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+  
+
+  <ul class="hidden lg:flex list-none">
+    <li class="flex flex-col items-center ml-6 p-2.5">
+      <i class="fa-solid fa-house block text-white py-1"></i>
+      <a class="text-white hover:border-b-4 border-transparent hover:border-white py-1" routerLink="/home">Accueil</a>
+    </li>
+    <li class="flex flex-col items-center ml-6 p-2.5">
+      <i class="fa-solid fa-box-open block text-white py-1"></i>
+      <a class="text-white hover:border-b-4 border-transparent hover:border-white py-1" routerLink="/services">Nos services</a>
+    </li>
+    <li class="flex flex-col items-center ml-6 p-2.5">
+      <i class="fa-regular fa-building block text-white py-1"></i>
+      <a class="text-white hover:border-b-4 border-transparent hover:border-white py-1" routerLink="/about_us">Qui nous sommes</a>
+    </li>
+    <li class="flex flex-col items-center ml-6 p-2.5">
+      <i class="fa-regular fa-circle-user block text-white py-1"></i>
+      <a class="text-white hover:border-b-4 border-transparent hover:border-white py-1" routerLink="/contact">Contact</a>
+    </li>
+  </ul>
+
+
+  <button (click)="toggleMenu()" class="lg:hidden text-white text-4xl">
+    <i class="fas fa-bars"></i>
+  </button>
+
+
+  <div *ngIf="menuOpen" class="absolute top-full left-0 w-full bg-zinc-800 z-[100] flex flex-col lg:hidden text-white shadow-md">
+    <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/home" (click)="toggleMenu()">Accueil</a>
+    <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/services" (click)="toggleMenu()">Nos services</a>
+    <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/about_us" (click)="toggleMenu()">Qui nous sommes</a>
+    <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/contact" (click)="toggleMenu()">Contact</a>
+    <div class="flex items-center p-4">
+      <input class="p-2 rounded-md border border-zinc-400 w-full bg-white" type="text" placeholder="Rechercher ...">
+      <button class="bg-stone-500 rounded-md p-2 ml-2 text-white">
+        <i class="fas fa-search"></i>
+      </button>
     </div>
+    
+  </div>
 </header>
-

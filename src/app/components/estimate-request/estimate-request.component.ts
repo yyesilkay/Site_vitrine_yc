@@ -1,12 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
+import { FormBuilder, Validators } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatInputModule } from '@angular/material/input';
 import { Router } from '@angular/router';
 import { Subscription } from 'rxjs';
-import { FormBuilder, Validators } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
-import { MatInputModule } from '@angular/material/input';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { ReactiveFormsModule } from '@angular/forms';
+
 import { ServiceType } from './models/service-type.enum';
 
 @Component({
@@ -61,12 +62,15 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     this.formValueSubscription?.unsubscribe();
   }
 
-  isFieldValid(title: string) {
+  isFieldValid(title: string): boolean {
     const formControl = this.formGroup.get(title);
-    return formControl?.invalid && (formControl?.dirty || formControl.touched);
+    return (
+      (formControl?.invalid ?? false) &&
+      ((formControl?.dirty ?? false) || (formControl?.touched ?? false))
+    );
   }
 
-  onSubmit(event: Event) {
+  onSubmit(event: Event): void {
     event.preventDefault();
 
     if (this.formGroup.valid) {
@@ -87,7 +91,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     });
   }
 
-  goBack() {
+  goBack(): void {
     this.router.navigate(['/home']);
   }
 }

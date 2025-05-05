@@ -2,6 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 
+interface FAQ {
+  question: string;
+  answer: string;
+  isOpen: boolean;
+}
+
 @Component({
   selector: 'app-faq',
   imports: [RouterModule, CommonModule],
@@ -9,7 +15,7 @@ import { RouterModule } from '@angular/router';
   styleUrl: './faq.component.css',
 })
 export class FaqComponent {
-  faqs = [
+  faqs: FAQ[] = [
     {
       question: "Quels sont vos délais pour la création d'un site internet ?",
       answer:
@@ -55,7 +61,7 @@ export class FaqComponent {
     },
   ];
 
-  toggleAnswer(faq: any) {
+  toggleAnswer(faq: FAQ): void {
     faq.isOpen = !faq.isOpen;
   }
 }

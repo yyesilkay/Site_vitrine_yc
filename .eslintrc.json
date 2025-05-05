@@ -1,10 +1,12 @@
-
 {
   "root": true,
   "ignorePatterns": ["projects/**/*"],
+  "plugins": ["simple-import-sort"],
   "overrides": [
     {
-      "files": ["*.ts"],
+      "files": ["*.ts", "*.tsx"],
+      "parser": "@typescript-eslint/parser",
+      "plugins": ["@typescript-eslint", "simple-import-sort"],
       "parserOptions": {
         "project": ["tsconfig.json"],
         "createDefaultProgram": true
@@ -15,10 +17,12 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
-        "@angular-eslint/component-class-suffix": [
+        "@angular-eslint/directive-selector": [
           "error",
           {
-            "suffixes": ["Page", "Component"]
+            "type": "attribute",
+            "prefix": "app",
+            "style": "camelCase"
           }
         ],
         "@angular-eslint/component-selector": [
@@ -29,32 +33,30 @@
             "style": "kebab-case"
           }
         ],
-        "@angular-eslint/directive-selector": [
-          "error",
-          {
-            "type": "attribute",
-            "prefix": "app",
-            "style": "camelCase"
-          }
-        ],
-        "@angular-eslint/use-lifecycle-interface": [
-          "error"
-        ],
-        "@typescript-eslint/member-ordering": 0,
-        "@typescript-eslint/naming-convention": 0
+        "@typescript-eslint/explicit-function-return-type": "error",
+        "@typescript-eslint/no-explicit-any": "warn",
+        "@typescript-eslint/no-inferrable-types": "error",
+        "no-unused-expressions": "warn",
+        "simple-import-sort/imports": "error",
+        "simple-import-sort/exports": "error"
       }
     },
     {
       "files": ["*.html"],
-      "extends": ["plugin:@angular-eslint/template/recommended"],
-      "rules": {}
+      "extends": [
+        "plugin:@angular-eslint/template/recommended",
+        "plugin:prettier/recommended"
+      ],
+      "rules": {
+        "@angular-eslint/template/prefer-control-flow": "off",  // Désactivée ici
+        "@angular-eslint/template/prefer-self-closing-tags": "error",
+        "prettier/prettier": ["error", { "parser": "angular" }]
+      }
     },
     {
-      "files": ["*.html"],
-      "excludedFiles": ["*inline-template-*.component.html"],
-      "extends": ["plugin:prettier/recommended"],
+      "files": ["**/index.html"],
       "rules": {
-        "prettier/prettier": ["error", { "parser": "angular" }]
+        "@angular-eslint/template/prefer-self-closing-tags": "off"
       }
     }
   ]

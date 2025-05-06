@@ -9,7 +9,9 @@
     "test": "ng test",
     "serve:ssr:site_vitrine_yc": "node dist/site_vitrine_yc/server/server.mjs",
     "lint": "ng lint",
-    "lint:fix": "ng lint --fix"
+    "lint:fix": "ng lint --fix",
+    "prettier": "prettier . --ignore-unknown --write",
+    "prettier:check": "prettier . --ignore-unknown --check"
   },
   "private": true,
   "dependencies": {

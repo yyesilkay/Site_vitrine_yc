@@ -36,7 +36,6 @@
         "@typescript-eslint/explicit-function-return-type": "error",
         "@typescript-eslint/no-explicit-any": "warn",
         "@typescript-eslint/no-inferrable-types": "error",
-        "no-unused-expressions": "warn",
         "simple-import-sort/imports": "error",
         "simple-import-sort/exports": "error"
       }
@@ -48,8 +47,8 @@
         "plugin:prettier/recommended"
       ],
       "rules": {
-        "@angular-eslint/template/prefer-control-flow": "off",  // Désactivée ici
-        "@angular-eslint/template/prefer-self-closing-tags": "error",
+        "@angular-eslint/template/prefer-control-flow": ["error"],   
+        "@angular-eslint/template/prefer-self-closing-tags": ["error"],
         "prettier/prettier": ["error", { "parser": "angular" }]
       }
     },

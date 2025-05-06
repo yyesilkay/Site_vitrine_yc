@@ -64,4 +64,3 @@ export class FaqComponent {
   toggleAnswer(faq: FAQ): void {
     faq.isOpen = !faq.isOpen;
   }
-}

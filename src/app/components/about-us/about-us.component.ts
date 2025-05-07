@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-about-us',
   imports: [RouterModule],
   templateUrl: './about-us.component.html',
-  styleUrl: './about-us.component.css'
 })
 export class AboutUsComponent {
 

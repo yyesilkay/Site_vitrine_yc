@@ -6,7 +6,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-faq',
   imports: [RouterModule, CommonModule],
   templateUrl: './faq.component.html',
-  styleUrl: './faq.component.css'
 })
 export class FaqComponent {
 

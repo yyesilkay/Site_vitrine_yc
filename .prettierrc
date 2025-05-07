@@ -1,0 +1,25 @@
+{
+    "htmlWhitespaceSensitivity": "ignore",
+    "singleQuote": true,
+    "trailingComma": "all",
+    "plugins": [
+        "prettier-plugin-organize-attributes",
+        "prettier-plugin-organize-imports",
+        "prettier-plugin-tailwindcss"
+    ],
+    "attributeGroups":[
+        "$ANGULAR_ELEMENT_REF",
+        "$ANGULAR_STRUCTURAL_DIRECTIVE",
+        "^(mat)-",
+        "$ANGULAR_ANIMATION",
+        "$ANGULAR_ANIMATION_INPUT",
+        "$ANGULAR_TWO_WAY_BINDING",
+        "^\\[(?!ngClass|\\(|@|attr\\.)",
+        "$ANGULAR_OUTPUT",
+        "$DEFAULT",
+        "^class$",
+        "^\\[(ngClass|attr\\.class)",
+        "^i18n"
+    ],
+    "attributeSort": "ASC"
+}

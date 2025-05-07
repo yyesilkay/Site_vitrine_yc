@@ -13,8 +13,9 @@
 </div>
 
 <div class="max-w-5xl mx-4 md:mx-8 lg:mx-auto space-y-6 mb-20">
+  @for (faq of faqs; track faq){
   <div
-    *ngFor="let faq of faqs"
+    
     (click)="toggleAnswer(faq)"
     class="bg-white border border-zinc-500 rounded-lg shadow p-5 cursor-pointer transition duration-300"
   >
@@ -37,4 +38,5 @@
       <p [innerHTML]="faq.answer"></p>
     </div>
   </div>
+}
 </div>

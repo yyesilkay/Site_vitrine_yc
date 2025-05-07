@@ -50,7 +50,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.formValueSubscription = this.formGroup.valueChanges.subscribe(
-      (value) => {
+      () => {
         // TODO: add logic to track form changes if needed
       },
     );

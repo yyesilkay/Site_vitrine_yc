@@ -57,43 +57,44 @@
     <i class="fas fa-bars"></i>
   </button>
 
-  <div
-    *ngIf="menuOpen"
-    class="absolute top-full left-0 w-full bg-zinc-800 z-[100] flex flex-col lg:hidden text-white shadow-md"
-  >
-    <a
-      class="px-6 py-4 border-b text-xl border-zinc-700"
-      routerLink="/home"
-      (click)="toggleMenu()"
-      >Accueil</a
+  @if (menuOpen) {
+    <div
+      class="absolute top-full left-0 w-full bg-zinc-800 z-[100] flex flex-col lg:hidden text-white shadow-md"
     >
-    <a
-      class="px-6 py-4 border-b text-xl border-zinc-700"
-      routerLink="/services"
-      (click)="toggleMenu()"
-      >Nos services</a
-    >
-    <a
-      class="px-6 py-4 border-b text-xl border-zinc-700"
-      routerLink="/about_us"
-      (click)="toggleMenu()"
-      >Qui nous sommes</a
-    >
-    <a
-      class="px-6 py-4 border-b text-xl border-zinc-700"
-      routerLink="/contact"
-      (click)="toggleMenu()"
-      >Contact</a
-    >
-    <div class="flex items-center p-4">
-      <input
-        class="p-2 rounded-md border border-zinc-400 w-full bg-white"
-        type="text"
-        placeholder="Rechercher ..."
-      />
-      <button class="bg-stone-500 rounded-md p-2 ml-2 text-white">
-        <i class="fas fa-search"></i>
-      </button>
+      <a
+        class="px-6 py-4 border-b text-xl border-zinc-700"
+        routerLink="/home"
+        (click)="toggleMenu()"
+        >Accueil</a
+      >
+      <a
+        class="px-6 py-4 border-b text-xl border-zinc-700"
+        routerLink="/services"
+        (click)="toggleMenu()"
+        >Nos services</a
+      >
+      <a
+        class="px-6 py-4 border-b text-xl border-zinc-700"
+        routerLink="/about_us"
+        (click)="toggleMenu()"
+        >Qui nous sommes</a
+      >
+      <a
+        class="px-6 py-4 border-b text-xl border-zinc-700"
+        routerLink="/contact"
+        (click)="toggleMenu()"
+        >Contact</a
+      >
+      <div class="flex items-center p-4">
+        <input
+          class="p-2 rounded-md border border-zinc-400 w-full bg-white"
+          type="text"
+          placeholder="Rechercher ..."
+        />
+        <button class="bg-stone-500 rounded-md p-2 ml-2 text-white">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
     </div>
-  </div>
+  }
 </header>

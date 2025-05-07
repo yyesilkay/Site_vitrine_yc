@@ -6,6 +6,4 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule],
   templateUrl: './services.component.html',
 })
-export class ServicesComponent {
-
-}
+export class ServicesComponent {}

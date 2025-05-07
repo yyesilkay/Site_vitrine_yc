@@ -5,7 +5,6 @@ import { RouterModule } from '@angular/router';
   selector: 'app-services',
   imports: [RouterModule],
   templateUrl: './services.component.html',
-  styleUrl: './services.component.css'
 })
 export class ServicesComponent {
 

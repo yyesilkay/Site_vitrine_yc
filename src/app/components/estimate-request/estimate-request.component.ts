@@ -13,7 +13,6 @@ import { ServiceType } from './models/service-type.enum';
   selector: 'app-estimate-request',
   imports: [ReactiveFormsModule, CommonModule, MatButtonModule, MatInputModule, MatCheckboxModule  ],
   templateUrl: './estimate-request.component.html',
-  styleUrl: './estimate-request.component.css'
 })
 export class EstimateRequestComponent implements OnInit, OnDestroy {
   

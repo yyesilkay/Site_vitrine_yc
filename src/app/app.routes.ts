@@ -1,51 +1,40 @@
 import { Routes } from '@angular/router';
 
-import { HomeComponent } from './components/home/home.component';
-
-import { ContactComponent } from './components/contact/contact.component';
-import { FaqComponent } from './components/faq/faq.component';
 import { AboutUsComponent } from './components/about-us/about-us.component';
+import { ContactComponent } from './components/contact/contact.component';
 import { EstimateRequestComponent } from './components/estimate-request/estimate-request.component';
+import { FaqComponent } from './components/faq/faq.component';
+import { HomeComponent } from './components/home/home.component';
 import { ServicesComponent } from './components/services/services.component';
 
-
-export const routes: Routes = [{
-
-    
+export const routes: Routes = [
+  {
     path: '',
     redirectTo: 'home',
-    pathMatch: 'full'
-    
-
-},
-{
+    pathMatch: 'full',
+  },
+  {
     path: 'home',
-    component: HomeComponent
-},
-{
+    component: HomeComponent,
+  },
+  {
     path: 'services',
-    component: ServicesComponent
-},
-{
+    component: ServicesComponent,
+  },
+  {
     path: 'about_us',
-    component: AboutUsComponent
-},
-{
+    component: AboutUsComponent,
+  },
+  {
     path: 'contact',
-    component: ContactComponent
-},
-{
+    component: ContactComponent,
+  },
+  {
     path: 'estimate_request',
-    component: EstimateRequestComponent
-},{
+    component: EstimateRequestComponent,
+  },
+  {
     path: 'faq',
-    component: FaqComponent
-}
-
-
-
-
-
-
-
+    component: FaqComponent,
+  },
 ];

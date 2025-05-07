@@ -6,6 +6,4 @@ import { RouterModule } from '@angular/router';
   imports: [RouterModule],
   templateUrl: './contact.component.html',
 })
-export class ContactComponent {
-
-}
+export class ContactComponent {}

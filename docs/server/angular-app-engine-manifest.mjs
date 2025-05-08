@@ -1,6 +1,6 @@
 
 export default {
-  basePath: '/yesil-conseil',
+  basePath: '/Site_vitrine_yc',
   supportedLocales: {
   "en-US": ""
 },

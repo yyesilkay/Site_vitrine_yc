@@ -1,0 +1,11 @@
+{
+  "routes": {
+    "/yesil-conseil": {},
+    "/yesil-conseil/about_us": {},
+    "/yesil-conseil/contact": {},
+    "/yesil-conseil/estimate_request": {},
+    "/yesil-conseil/faq": {},
+    "/yesil-conseil/home": {},
+    "/yesil-conseil/services": {}
+  }
+}

@@ -10,7 +10,7 @@
     "serve:ssr:site_vitrine_yc": "node dist/site_vitrine_yc/server/server.mjs",
     "lint": "nx affected:lint",
     "lint:fix": "nx lint --fix",
-    "build:prod": "nx build --output-path docs --base-href /Site_vitrine_yc/",
+    "build:prod": "nx build --output-path docs --base-href /Site_vitrine_yc/ --configuration production && xcopy /E /Y docs\\browser\\* docs\\ && rmdir /S /Q docs\\browser",
     "prettier": "prettier . --ignore-unknown --write",
     "prettier:check": "prettier . --ignore-unknown --check"
   },

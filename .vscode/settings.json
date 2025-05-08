@@ -1,0 +1,13 @@
+{
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit",
+      "source.fixAll": "explicit",
+    },
+      "eslint.validate": [
+        "javascript",
+        "typescript",
+        "html"
+      ],
+      "editor.formatOnSave": true,
+      "eslint.format.enable": true
+}

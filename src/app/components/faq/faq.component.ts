@@ -1,4 +1,5 @@
 import { CommonModule } from '@angular/common';
+import { ANIMATION_MODULE_TYPE } from '@angular/core';
 import { Component } from '@angular/core';
 import { RouterModule } from '@angular/router';
 

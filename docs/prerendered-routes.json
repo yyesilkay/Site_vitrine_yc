@@ -1,11 +1,3 @@
 {
-  "routes": {
-    "/Site_vitrine_yc": {},
-    "/Site_vitrine_yc/about_us": {},
-    "/Site_vitrine_yc/contact": {},
-    "/Site_vitrine_yc/estimate_request": {},
-    "/Site_vitrine_yc/faq": {},
-    "/Site_vitrine_yc/home": {},
-    "/Site_vitrine_yc/services": {}
-  }
+  "routes": {}
 }

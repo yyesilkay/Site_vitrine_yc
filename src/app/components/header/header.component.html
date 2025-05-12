@@ -1,93 +1,82 @@
-<header
-  class="flex z-10 justify-between items-center py-10 px-6 shadow-sm bg-zinc-800 relative"
->
+<header class="flex z-10 justify-between items-center py-10 px-4 shadow-sm bg-zinc-800 relative">
+  <!-- Logo -->
   <div class="flex items-center">
     <a class="active" routerLink="/home">
-      <img src="./assets/logo.jpg" class="h-16" alt="" />
+      <img
+        src="./assets/logo.jpg"
+        class="h-auto max-h-16 sm:max-h-12 md:max-h-14 lg:max-h-16 xl:max-h-20 w-auto"
+        alt="Logo"
+      />
     </a>
   </div>
 
-  <div class="hidden lg:flex items-center">
+  <!-- Barre de recherche (visible à partir de lg) -->
+  <div class="hidden lg:flex items-center max-[1093px]:scale-90 min-[1094px]:scale-100">
     <input
-      class="p-2.5 rounded-md border border-zinc-400 w-[250px] md:w-[400px] bg-white"
+      class="p-2.5 rounded-md border border-zinc-400 w-[200px] md:w-[300px] xl:w-[400px] bg-white"
       type="text"
       placeholder="Rechercher ..."
     />
-    <button class="bg-stone-500 rounded-md p-2.5 ml-2.5 text-white w-12">
+    <button class="bg-stone-500 rounded-md p-2.5 ml-2 text-white w-10">
       <i class="fas fa-search"></i>
     </button>
   </div>
 
-  <ul class="hidden lg:flex list-none">
-    <li class="flex flex-col items-center ml-6 p-2.5">
-      <i class="fa-solid fa-house block text-white py-1"></i>
+  <!-- Liens de navigation -->
+  <ul class="hidden lg:flex list-none items-center max-[1093px]:scale-90 min-[1094px]:scale-100">
+    <li class="flex flex-col items-center ml-4 p-2.5">
+      <i class="fa-solid fa-house block text-white py-1 text-md"></i>
       <a
-        class="text-white hover:border-b-4 border-transparent hover:border-white py-1"
+        class="text-white whitespace-nowrap text-md hover:border-b-4 border-transparent hover:border-white py-1"
         routerLink="/home"
         >Accueil</a
       >
     </li>
-    <li class="flex flex-col items-center ml-6 p-2.5">
-      <i class="fa-solid fa-box-open block text-white py-1"></i>
+    <li class="flex flex-col items-center ml-4 p-2.5">
+      <i class="fa-solid fa-box-open block text-white py-1 text-md"></i>
       <a
-        class="text-white hover:border-b-4 border-transparent hover:border-white py-1"
+        class="text-white whitespace-nowrap text-md hover:border-b-4 border-transparent hover:border-white py-1"
         routerLink="/services"
         >Nos services</a
       >
     </li>
-    <li class="flex flex-col items-center ml-6 p-2.5">
-      <i class="fa-regular fa-building block text-white py-1"></i>
+    <li class="flex flex-col items-center ml-4 p-2.5">
+      <i class="fa-regular fa-building block text-white py-1 text-md"></i>
       <a
-        class="text-white hover:border-b-4 border-transparent hover:border-white py-1"
+        class="text-white whitespace-nowrap text-md hover:border-b-4 border-transparent hover:border-white py-1"
         routerLink="/about_us"
         >Qui nous sommes</a
       >
     </li>
-    <li class="flex flex-col items-center ml-6 p-2.5">
-      <i class="fa-regular fa-circle-user block text-white py-1"></i>
+    <li class="flex flex-col items-center ml-4 p-2.5">
+      <i class="fa-regular fa-circle-user block text-white py-1 text-md"></i>
       <a
-        class="text-white hover:border-b-4 border-transparent hover:border-white py-1"
+        class="text-white whitespace-nowrap text-md hover:border-b-4 border-transparent hover:border-white py-1"
         routerLink="/contact"
         >Contact</a
       >
     </li>
   </ul>
 
-  <button (click)="toggleMenu()" class="lg:hidden text-white text-4xl">
+  <!-- Menu burger (mobile) -->
+  <button (click)="toggleMenu()" class="lg:hidden text-white text-4xl max-[1093px]:block min-[1094px]:hidden">
     <i class="fas fa-bars"></i>
   </button>
 
+  <!-- Menu mobile ouvert -->
   @if (menuOpen) {
     <div
       class="absolute top-full left-0 w-full bg-zinc-800 z-[100] flex flex-col lg:hidden text-white shadow-md"
     >
-      <a
-        class="px-6 py-4 border-b text-xl border-zinc-700"
-        routerLink="/home"
-        (click)="toggleMenu()"
-        >Accueil</a
-      >
-      <a
-        class="px-6 py-4 border-b text-xl border-zinc-700"
-        routerLink="/services"
-        (click)="toggleMenu()"
-        >Nos services</a
-      >
-      <a
-        class="px-6 py-4 border-b text-xl border-zinc-700"
-        routerLink="/about_us"
-        (click)="toggleMenu()"
-        >Qui nous sommes</a
-      >
-      <a
-        class="px-6 py-4 border-b text-xl border-zinc-700"
-        routerLink="/contact"
-        (click)="toggleMenu()"
-        >Contact</a
-      >
+      <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/home" (click)="toggleMenu()">Accueil</a>
+      <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/services" (click)="toggleMenu()">Nos services</a>
+      <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/about_us" (click)="toggleMenu()">Qui nous sommes</a>
+      <a class="px-6 py-4 border-b text-xl border-zinc-700" routerLink="/contact" (click)="toggleMenu()">Contact</a>
+
+      <!-- Barre de recherche dans le menu mobile -->
       <div class="flex items-center p-4">
         <input
-          class="p-2 rounded-md border border-zinc-400 w-full bg-white"
+          class="p-2 rounded-md border border-zinc-400 w-full bg-white text-black"
           type="text"
           placeholder="Rechercher ..."
         />

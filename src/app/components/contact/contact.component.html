@@ -37,28 +37,40 @@
 <section
   class="flex flex-col lg:flex-row justify-between m-4 md:m-8 p-6 md:p-10 border-2 border-solid border-zinc-200"
 >
-  <form class="lg:w-[65%] flex flex-col items-start w-full" actions="">
+  <form (ngSubmit)="onSubmit()" #contactForm="ngForm" class="lg:w-[65%] flex flex-col items-start w-full">
     <span class="font-bold text-2xl">CONTACTEZ-NOUS</span>
     <h2 class="mt-4 mb-4 md:text-lg text-base">
       Vous pouvez nous soumettre ici votre demande, nous nous efforcerons d’y
       répondre rapidement.
     </h2>
     <input
+      [(ngModel)]="formData.nom"
+      name="nom"
+      required
       class="w-full p-4 mb-5 text-base border-2 border-neutral-900 outline-none"
       type="text"
       placeholder="Votre Nom"
     />
     <input
+      [(ngModel)]="formData.email"
+      name="email"
+      required
       class="w-full p-4 mb-5 text-base border-2 border-neutral-900 outline-none"
-      type="text"
+      type="email"
       placeholder="Votre adresse e-mail"
     />
     <input
+      [(ngModel)]="formData.sujet"
+      name="sujet"
+      required
       class="w-full p-4 mb-5 text-base border-2 border-neutral-900 outline-none"
       type="text"
       placeholder="Sujet de la demande"
     />
     <textarea
+      [(ngModel)]="formData.message"
+      name="message"
+      required
       class="w-full p-4 mb-5 text-base border-2 border-neutral-900 outline-none"
       rows="6"
       placeholder="Votre Message"

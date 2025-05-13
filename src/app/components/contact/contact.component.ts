@@ -6,7 +6,7 @@ import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-contact',
-  imports: [RouterModule, FormsModule, HttpClientModule ],
+  imports: [RouterModule, FormsModule, HttpClientModule],
   templateUrl: './contact.component.html',
 })
 export class ContactComponent {
@@ -20,13 +20,13 @@ export class ContactComponent {
   constructor(private http: HttpClient) {}
 
   onSubmit(): void {
-  this.http.post('http://localhost:3000/send-email', this.formData, { responseType: 'text' }).subscribe({
+  this.http.post('https://site-vitrine-yc.onrender.com/send-email', this.formData, { responseType: 'text' }).subscribe({
     next: (response) => {
-      console.log(response); // Ajoute un log pour vérifier la réponse du serveur
+      console.log(response);
       alert('Email envoyé avec succès ✅');
     },
     error: (err) => {
-      console.error('Erreur lors de l\'envoi :', err); // Ajoute un log pour les erreurs
+      console.error('Erreur lors de l\'envoi :', err); 
       alert('Erreur lors de l\'envoi ❌ : ' + err.message);
     }
   });

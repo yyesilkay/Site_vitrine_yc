@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -17,6 +17,7 @@ import { ServiceType } from './models/service-type.enum';
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
+    HttpClientModule,
   ],
   templateUrl: './estimate-request.component.html',
 })
@@ -75,7 +76,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     if (this.formGroup.valid) {
       const formValue = this.formGroup.value;
 
-      this.http.post('https://ton-backend/api/send-estimate', formValue, {
+      this.http.post('https://site-vitrine-yc.onrender.com/send-estimate', formValue, {
         responseType: 'text',
       }).subscribe({
         next: (response) => {

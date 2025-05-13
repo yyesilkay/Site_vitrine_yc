@@ -7,6 +7,7 @@ require('dotenv').config();
 const app = express();
 app.use(cors());
 app.use(bodyParser.json());
+const PORT = process.env.PORT || 3000;
 
 app.post('/send-email', (req, res) => {
     const { nom, email, sujet, message } = req.body;
@@ -84,7 +85,7 @@ app.post('/send-estimate', (req, res) => {
     const mailOptions = {
         from: email,
         to: 'a.bridja77@gmail.com',
-        subject: 'Demande de devis de ${firstName} ${lastName}',
+        subject: `Demande de devis de ${firstName} ${lastName}`,
         text: message
 
     };
@@ -99,7 +100,6 @@ app.post('/send-estimate', (req, res) => {
 
 });
 
-app.listen(3000, () => {
-    console.log('Serveur démarré sur http://localhost:3000');
-})
-  
+app.listen(PORT, () => {
+  console.log(`✅ Serveur démarré sur le port ${PORT}`);
+});

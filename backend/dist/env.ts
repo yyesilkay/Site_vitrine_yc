@@ -1,5 +1,7 @@
 import * as dotenv from 'dotenv'
-dotenv.config();
+import path from 'path'
+
+dotenv.config({path: path.resolve(__dirname, '../.env')});
 
 function getEnvVar(name: string): string {
     const value = process.env[name];
@@ -14,6 +16,6 @@ export const ENV = {
     GMAIL_USER: getEnvVar('GMAIL_USER'),
     GMAIL_PASS: getEnvVar('GMAIL_PASS'),
 
-}
+};
 
 

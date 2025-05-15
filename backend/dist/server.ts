@@ -1,8 +1,10 @@
-import nodemailer from 'nodemailer';
-import express, {Request, Response } from 'express';
 import bodyParser from 'body-parser';
 import cors from 'cors';
+import express, { Request, Response } from 'express';
+import nodemailer from 'nodemailer';
+
 import { ENV } from './env';
+
 
 
 const app = express();
@@ -36,7 +38,7 @@ app.post('/send-email', (req: Request , res: Response) => {
             return res.status(500).send(err.toString());
 
         }
-        res.send('Email envoyé avec succés');
+        return res.send('Email envoyé avec succés');
     });
 });
 
@@ -96,7 +98,7 @@ app.post('/send-estimate', (req, res) => {
             return res.status(500).send(err.toString());
 
         }
-        res.send('Demande de devis envoyée avec succès');
+        return res.send('Demande de devis envoyée avec succès');
     });
 
 });

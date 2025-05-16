@@ -39,18 +39,18 @@ app.post('/send-email', (req: Request<{}, {}, ContactRequest>, res: Response) =>
 
   debugger;
   const transporter = nodemailer.createTransport({
-    secure: true,
-    host: "smtp.gmail.com",
-    port: 465,
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS
-    }
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
   });
 
   const mailOptions = {
     from: email,
-    to: 'yayusamsung@gmail.com',
+    to: process.env.SMTP_USER,
     subject: `Message de ${nom} - Sujet: ${sujet}`,
     text: message
   };
@@ -97,18 +97,18 @@ app.post('/send-estimate', (req: Request<{}, {}, EstimateRequest>, res: Response
     `;
 
   const transporter = nodemailer.createTransport({
-    secure: true,
-    host: "smtp.gmail.com",
-    port: 465,
+    host: process.env.SMTP_HOST,
+    port: Number(process.env.SMTP_PORT),
+    secure: process.env.SMTP_SECURE === 'true',
     auth: {
-      user: process.env.GMAIL_USER,
-      pass: process.env.GMAIL_PASS
-    }
+      user: process.env.SMTP_USER,
+      pass: process.env.SMTP_PASS,
+    },
   });
 
   const mailOptions = {
     from: email,
-    to: 'yayusamsung@gmail.com',
+    to: process.env.SMTP_USER,
     subject: `Demande de devis de ${firstName} ${lastName}`,
     text: message
   };

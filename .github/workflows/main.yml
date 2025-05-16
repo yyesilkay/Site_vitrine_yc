@@ -1,9 +1,10 @@
 name: Deploy API Node.js to o2switch
 
-on:
-  push:
-    branches:
-      - fix/yy/ReviewArchiOfProject
+# on:
+#  push:
+#    branches:
+#      - fix/yy/ReviewArchiOfProject
+on: workflow_dispatch
 
 jobs:
   build-and-deploy:

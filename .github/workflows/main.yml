@@ -17,7 +17,7 @@ jobs:
         run: npm install
 
       - name: Build API
-        run: npx nx build api --configuration=production
+        run: npm run build:api
 
       #- name: Copy .env file (optionnel, si tu veux versionner un .env.example)
       #  run: cp apps/api/.env dist/apps/api/.env

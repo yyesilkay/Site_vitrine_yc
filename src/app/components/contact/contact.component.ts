@@ -20,7 +20,7 @@ export class ContactComponent {
   constructor(private http: HttpClient) {}
 
   onSubmit(): void {
-  this.http.post('https://site-vitrine-yc.onrender.com/send-email', this.formData, { responseType: 'text' }).subscribe({
+  this.http.post('', this.formData, { responseType: 'text' }).subscribe({
     next: (response) => {
       console.log(response);
       alert('Email envoyé avec succès ✅');

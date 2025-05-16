@@ -1,0 +1,132 @@
+<section
+  id="hero"
+  class="mx-auto flex h-screen w-[95%] items-center justify-center px-4 md:px-20"
+>
+  <div
+    class="flex w-full flex-col items-center justify-between gap-8 md:gap-12 lg:flex-row"
+  >
+    <div
+      class="max-w-[100%] text-center text-zinc-900 md:max-w-[50%] lg:text-start"
+    >
+      <h1 class="mb-5 text-4xl leading-tight font-bold md:text-4xl">
+        Yesil Conseil -
+        <br />
+        Conseil en Informatique
+      </h1>
+      <p class="mb-8 text-[1rem] md:text-[1.2rem]">
+        Des solutions sur mesure pour optimiser vos systèmes informatiques.
+        Contactez-nous pour obtenir un devis personnalisé.
+      </p>
+
+      <div class="mt-8 flex justify-center gap-5 lg:justify-start">
+        <a routerLink="/estimate_request" class="no-underline">
+          <button
+            class="transform rounded-md bg-zinc-900 px-6 py-3 text-[14px] text-white transition-all hover:-translate-y-1 hover:bg-zinc-800 active:bg-blue-700 lg:text-[16px]"
+          >
+            Demander un devis
+          </button>
+        </a>
+      </div>
+    </div>
+
+    <div class="mt-8 flex flex-1 justify-center md:mt-0 md:justify-end">
+      <img
+        alt="Image consultant informatique"
+        src="./assets/conseil-informatique.jpg"
+        class="h-auto w-full"
+      />
+    </div>
+  </div>
+</section>
+
+<section class="bg-zinc-800 px-5 py-20 text-center text-white">
+  <h2 class="mb-8 text-4xl font-bold">Qui sommes-nous ?</h2>
+  <p class="mx-auto mb-8 max-w-4xl text-xl leading-relaxed">
+    YESIL CONSEIL est une société spécialisée dans le conseil en systèmes et
+    logiciels informatiques. Nous accompagnons les entreprises dans leur
+    transformation numérique grâce à des solutions sur mesure.
+  </p>
+  <a routerLink="/about_us" class="no-underline">
+    <button
+      class="transform cursor-pointer rounded-md border-0 bg-white px-6 py-3 text-base text-zinc-800 transition-all duration-300 ease-in-out hover:-translate-y-1 hover:bg-white active:translate-y-0 active:bg-zinc-800"
+    >
+      En savoir plus
+    </button>
+  </a>
+</section>
+
+<section class="light-section bg-white px-5 py-20 text-center text-zinc-800">
+  <h2 class="mb-8 text-4xl font-bold">Nos Services</h2>
+
+  <div
+    class="mt-10 grid grid-cols-[repeat(auto-fit,_minmax(250px,_1fr))] gap-6"
+  >
+    <div
+      class="cursor-pointer rounded-md border border-[#ddd] bg-zinc-100 p-8 transition-transform duration-300 hover:-translate-y-2"
+    >
+      <h3 class="mb-5 text-2xl font-semibold">Site Vitrine</h3>
+      <p>Présentez votre activité avec un site pro.</p>
+    </div>
+    <div
+      class="cursor-pointer rounded-md border border-[#ddd] bg-zinc-100 p-8 transition-transform duration-300 hover:-translate-y-2"
+    >
+      <h3 class="mb-5 text-2xl font-semibold">Site E-commerce</h3>
+      <p>Vendez vos produits en ligne facilement.</p>
+    </div>
+    <div
+      class="cursor-pointer rounded-md border border-[#ddd] bg-zinc-100 p-8 transition-transform duration-300 hover:-translate-y-2"
+    >
+      <h3 class="mb-5 text-2xl font-semibold">Applications Mobile</h3>
+      <p>Des apps performantes pour vos utilisateurs.</p>
+    </div>
+    <div
+      class="cursor-pointer rounded-md border border-[#ddd] bg-zinc-100 p-8 transition-transform duration-300 hover:-translate-y-2"
+    >
+      <h3 class="mb-5 text-2xl font-semibold">Maintenance</h3>
+      <p>Maintenez vos applications au top de leur performance.</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-zinc-800 px-5 py-20 text-center text-white">
+  <h2 class="mb-8 text-4xl font-bold">Chiffres clés</h2>
+  <div class="mt-10 flex flex-wrap justify-center gap-10">
+    <div class="text-center">
+      <h3 class="mb-2.5 text-5xl">50+</h3>
+      <p>Projets réalisés</p>
+    </div>
+    <div class="text-center">
+      <h3 class="mb-2.5 text-5xl">10+</h3>
+      <p>Année d'expertise</p>
+    </div>
+    <div class="text-center">
+      <h3 class="mb-2.5 text-5xl">100%</h3>
+      <p>Satisfaction client</p>
+    </div>
+  </div>
+</section>
+
+<section class="bg-white px-5 py-20 text-center text-zinc-800">
+  <h2 class="mb-8 text-4xl font-bold">Vous avez un projet ? Discutons-en.</h2>
+  <p class="mx-auto mb-8 max-w-4xl text-xl leading-relaxed">
+    Que ce soit pour une nouvelle idée ou pour améliorer un projet existant,
+    notre équipe est là pour vous accompagner. Nous offrons des solutions sur
+    mesure pour répondre à vos besoins spécifiques.
+  </p>
+  <div class="flex justify-center gap-6 py-6">
+    <a routerLink="/estimate_request" class="inline-block">
+      <button
+        class="transform rounded-md bg-zinc-800 px-6 py-3 text-amber-50 transition-all duration-300 ease-in-out hover:-translate-y-1 active:translate-y-0"
+      >
+        Demander un devis
+      </button>
+    </a>
+    <a routerLink="/contact" class="inline-block">
+      <button
+        class="transform rounded-md bg-zinc-800 px-6 py-3 text-amber-50 transition-all duration-300 ease-in-out hover:-translate-y-1 active:translate-y-0"
+      >
+        Nous contacter
+      </button>
+    </a>
+  </div>
+</section>

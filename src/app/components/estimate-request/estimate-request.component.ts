@@ -1,3 +1,4 @@
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { Component, inject, OnDestroy, OnInit } from '@angular/core';
 import { FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -16,12 +17,14 @@ import { ServiceType } from './models/service-type.enum';
     MatButtonModule,
     MatInputModule,
     MatCheckboxModule,
+    HttpClientModule,
   ],
   templateUrl: './estimate-request.component.html',
 })
 export class EstimateRequestComponent implements OnInit, OnDestroy {
   private fb = inject(FormBuilder);
   private router = inject(Router);
+  private http = inject(HttpClient);
 
   formValueSubscription: Subscription | null = null;
 
@@ -71,7 +74,22 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
     event.preventDefault();
 
     if (this.formGroup.valid) {
-      // TODO: add mail service to send the request
+      const formValue = this.formGroup.value;
+
+      this.http.post('https://site-vitrine-yc.onrender.com/send-estimate', formValue, {
+        responseType: 'text',
+      }).subscribe({
+        next: (response) => {
+          console.log(response);
+          alert('Demande de devis envoyée ✅');
+          this.clear();
+          this.goBack();
+        },
+        error: (err) => {
+          console.error('Erreur lors de l\' envoi du devis: ', err);
+          alert('Erreur ❌ : ' + err.message);
+        }
+      });
     } else {
       console.log('Invalid form !');
     }

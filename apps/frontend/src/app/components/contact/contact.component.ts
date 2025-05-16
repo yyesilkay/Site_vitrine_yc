@@ -20,7 +20,7 @@ export class ContactComponent {
 
   onSubmit(): void {
     this.http
-      .post('https://site-vitrine-yc.onrender.com/send-email', this.formData, {
+      .post('https://server.yesilconseil.com/send-email', this.formData, {
         responseType: 'text',
       })
       .subscribe({

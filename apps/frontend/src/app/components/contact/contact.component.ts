@@ -20,7 +20,7 @@ export class ContactComponent {
 
   onSubmit(): void {
     this.http
-      .post('https://server.yesilconseil.com/send-email', this.formData, {
+      .post('http://server.yesilconseil.fr/send-email', this.formData, {
         responseType: 'text',
       })
       .subscribe({

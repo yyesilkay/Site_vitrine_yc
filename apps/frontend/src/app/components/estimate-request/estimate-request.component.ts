@@ -74,7 +74,7 @@ export class EstimateRequestComponent implements OnInit, OnDestroy {
       const formValue = this.formGroup.value;
 
       this.http
-        .post('https://site-vitrine-yc.onrender.com/send-estimate', formValue, {
+        .post('http://server.yesilconseil.fr/send-estimate', formValue, {
           responseType: 'text',
         })
         .subscribe({

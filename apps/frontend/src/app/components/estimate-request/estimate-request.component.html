@@ -1,0 +1,118 @@
+<div class="flex flex-col px-10 py-5">
+  <h1 class="m-5 text-center text-4xl font-semibold">
+    Obtenez Votre Devis en Moins d'une Minute !
+  </h1>
+
+  <div class="flex items-center justify-center px-5 py-10">
+    <form
+      [formGroup]="formGroup"
+      (submit)="onSubmit($event)"
+      class="w-full max-w-6xl rounded-b-lg bg-zinc-100 p-6 shadow-lg"
+    >
+      <div class="mb-8 flex flex-col gap-5">
+        <h2 class="text-2xl font-bold">Informations personnelles</h2>
+
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Nom</mat-label>
+          <input formControlName="lastName" matInput />
+          @if (isFieldValid('lastName')) {
+            <mat-error>Ce champ est obligatoire</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Prénom</mat-label>
+          <input formControlName="firstName" matInput />
+          @if (isFieldValid('firstName')) {
+            <mat-error>Ce champ est obligatoire</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Adresse</mat-label>
+          <input formControlName="address" matInput />
+          @if (isFieldValid('address')) {
+            <mat-error>Ce champ est obligatoire</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Email</mat-label>
+          <input formControlName="email" matInput />
+
+          @if (!isFieldValid('email')) {
+            <mat-error>Ce champ est obligatoire</mat-error>
+          }
+
+          @if (!isValidEmail()) {
+            <mat-error>L'adresse n'est pas valide</mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Numéro de téléphone</mat-label>
+          <input formControlName="phone" matInput />
+          @if (isFieldValid('phone')) {
+            <mat-error>
+              Ce champ est obligatoire et doit contenir 10 chiffres
+            </mat-error>
+          }
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+          <mat-label>Département</mat-label>
+          <input formControlName="department" matInput />
+          @if (isFieldValid('department')) {
+            <mat-error>Ce champ est obligatoire</mat-error>
+          }
+        </mat-form-field>
+      </div>
+
+      <div class="mb-8 flex flex-col gap-5">
+        <h2 class="text-2xl font-bold">Type de prestations</h2>
+        <section class="flex flex-wrap gap-5">
+          @for (service of serviceTypes; track service.key) {
+            <mat-checkbox
+              [formControlName]="service.key"
+              class="flex-shrink flex-grow basis-[45%]"
+            >
+              {{ service.label }}
+            </mat-checkbox>
+          }
+        </section>
+      </div>
+
+      <div class="mb-8 flex flex-col gap-5">
+        <h2 class="text-2xl font-bold">Merci de préciser</h2>
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Merci de préciser :</mat-label>
+          <textarea formControlName="details" matInput rows="5"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="mb-8 flex flex-col gap-5">
+        <h2 class="text-2xl font-bold">Commentaire et questions</h2>
+        <mat-form-field appearance="fill" class="w-full">
+          <mat-label>Commentaire :</mat-label>
+          <textarea formControlName="comment" matInput rows="5"></textarea>
+        </mat-form-field>
+      </div>
+
+      <div class="mt-6 flex flex-wrap justify-center gap-4">
+        <button mat-flat-button (click)="goBack()" color="warn" type="button">
+          Revenir
+        </button>
+        <span class="flex-1"></span>
+        <button mat-button (click)="clear()" type="button">Effacer</button>
+        <button
+          mat-flat-button
+          [disabled]="formGroup.invalid"
+          color="primary"
+          type="submit"
+        >
+          Envoyer
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

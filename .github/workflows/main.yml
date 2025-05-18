@@ -1,10 +1,10 @@
 name: Deploy API Node.js to o2switch
 
-# on:
-#  push:
-#    branches:
-#      - fix/yy/ReviewArchiOfProject
-on: workflow_dispatch
+ on:
+  push:
+    branches:
+      - main
+# on: workflow_dispatch
 
 jobs:
   build-and-deploy:
@@ -29,10 +29,10 @@ jobs:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          local-dir: ./dist/apps/api/
-          # server-dir: /www/api # adapte ce chemin à la racine de ton hébergement
-
-      # (Optional) restart node js if needed
+          local-dir: dist/apps/api/
+          # server-dir: /www/ 
+          dangerous-clean-slate: true
+ 
       # - name: Restart Node.js app via SSH
       #   uses: appleboy/ssh-action@v1.0.0
       #   with:

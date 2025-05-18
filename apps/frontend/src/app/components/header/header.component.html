@@ -1,0 +1,126 @@
+<header
+  class="relative z-10 flex items-center justify-between bg-zinc-800 px-4 py-10 shadow-sm"
+>
+  <!-- Logo -->
+  <div class="flex items-center">
+    <a routerLink="/home" class="active">
+      <img
+        alt="Logo"
+        src="./assets/logo.jpg"
+        class="h-auto max-h-16 w-auto sm:max-h-12 md:max-h-14 lg:max-h-16 xl:max-h-20"
+      />
+    </a>
+  </div>
+
+  <!-- Barre de recherche (visible à partir de lg) -->
+  <div
+    class="hidden items-center max-[1093px]:scale-90 min-[1094px]:scale-100 lg:flex"
+  >
+    <input
+      placeholder="Rechercher ..."
+      type="text"
+      class="w-[200px] rounded-md border border-zinc-400 bg-white p-2.5 md:w-[300px] xl:w-[400px]"
+    />
+    <button class="ml-2 w-10 rounded-md bg-stone-500 p-2.5 text-white">
+      <i class="fas fa-search"></i>
+    </button>
+  </div>
+
+  <!-- Liens de navigation -->
+  <ul
+    class="hidden list-none items-center max-[1093px]:scale-90 min-[1094px]:scale-100 lg:flex"
+  >
+    <li class="ml-4 flex flex-col items-center p-2.5">
+      <i class="fa-solid fa-house text-md block py-1 text-white"></i>
+      <a
+        routerLink="/home"
+        class="text-md border-transparent py-1 whitespace-nowrap text-white hover:border-b-4 hover:border-white"
+      >
+        Accueil
+      </a>
+    </li>
+    <li class="ml-4 flex flex-col items-center p-2.5">
+      <i class="fa-solid fa-box-open text-md block py-1 text-white"></i>
+      <a
+        routerLink="/services"
+        class="text-md border-transparent py-1 whitespace-nowrap text-white hover:border-b-4 hover:border-white"
+      >
+        Nos services
+      </a>
+    </li>
+    <li class="ml-4 flex flex-col items-center p-2.5">
+      <i class="fa-regular fa-building text-md block py-1 text-white"></i>
+      <a
+        routerLink="/about_us"
+        class="text-md border-transparent py-1 whitespace-nowrap text-white hover:border-b-4 hover:border-white"
+      >
+        Qui nous sommes
+      </a>
+    </li>
+    <li class="ml-4 flex flex-col items-center p-2.5">
+      <i class="fa-regular fa-circle-user text-md block py-1 text-white"></i>
+      <a
+        routerLink="/contact"
+        class="text-md border-transparent py-1 whitespace-nowrap text-white hover:border-b-4 hover:border-white"
+      >
+        Contact
+      </a>
+    </li>
+  </ul>
+
+  <!-- Menu burger (mobile) -->
+  <button
+    (click)="toggleMenu()"
+    class="text-4xl text-white max-[1093px]:block min-[1094px]:hidden lg:hidden"
+  >
+    <i class="fas fa-bars"></i>
+  </button>
+
+  <!-- Menu mobile ouvert -->
+  @if (menuOpen) {
+    <div
+      class="absolute top-full left-0 z-[100] flex w-full flex-col bg-zinc-800 text-white shadow-md lg:hidden"
+    >
+      <a
+        (click)="toggleMenu()"
+        routerLink="/home"
+        class="border-b border-zinc-700 px-6 py-4 text-xl"
+      >
+        Accueil
+      </a>
+      <a
+        (click)="toggleMenu()"
+        routerLink="/services"
+        class="border-b border-zinc-700 px-6 py-4 text-xl"
+      >
+        Nos services
+      </a>
+      <a
+        (click)="toggleMenu()"
+        routerLink="/about_us"
+        class="border-b border-zinc-700 px-6 py-4 text-xl"
+      >
+        Qui nous sommes
+      </a>
+      <a
+        (click)="toggleMenu()"
+        routerLink="/contact"
+        class="border-b border-zinc-700 px-6 py-4 text-xl"
+      >
+        Contact
+      </a>
+
+      <!-- Barre de recherche dans le menu mobile -->
+      <div class="flex items-center p-4">
+        <input
+          placeholder="Rechercher ..."
+          type="text"
+          class="w-full rounded-md border border-zinc-400 bg-white p-2 text-black"
+        />
+        <button class="ml-2 rounded-md bg-stone-500 p-2 text-white">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+    </div>
+  }
+</header>

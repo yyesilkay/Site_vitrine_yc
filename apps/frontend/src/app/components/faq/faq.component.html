@@ -1,0 +1,41 @@
+<h1
+  class="py-9 text-center text-3xl font-bold text-zinc-800 sm:text-4xl lg:text-5xl"
+>
+  Consultez la foire aux questions !
+</h1>
+
+<div class="mb-10 flex justify-center">
+  <img
+    alt="FAQ illustration"
+    src="./assets/faq.png"
+    class="mx-2 max-h-[500px] w-full rounded-md object-cover sm:max-h-[700px]"
+  />
+</div>
+
+<div class="mx-4 mb-20 max-w-5xl space-y-6 md:mx-8 lg:mx-auto">
+  @for (faq of faqs; track faq) {
+    <div
+      (click)="toggleAnswer(faq)"
+      class="cursor-pointer rounded-lg border border-zinc-500 bg-white p-5 shadow transition duration-300"
+    >
+      <div class="flex items-center justify-between">
+        <h2 class="text-xl font-semibold text-zinc-800 sm:text-2xl">
+          {{ faq.question }}
+        </h2>
+        <img
+          [src]="faq.isOpen ? './assets/minus.png' : './assets/croix.png'"
+          alt="toggle icon"
+          class="h-5 w-5"
+        />
+      </div>
+
+      <div
+        [class.max-h-0]="!faq.isOpen"
+        [class.max-h-96]="faq.isOpen"
+        class="mt-3 overflow-hidden text-lg text-zinc-800 transition-all duration-300"
+      >
+        <p [innerHTML]="faq.answer"></p>
+      </div>
+    </div>
+  }
+</div>

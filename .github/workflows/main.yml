@@ -1,6 +1,6 @@
 name: Deploy API Node.js to o2switch
 
- on:
+on:
   push:
     branches:
       - main

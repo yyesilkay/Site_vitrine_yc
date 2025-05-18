@@ -31,6 +31,7 @@ jobs:
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/apps/api/
           # server-dir: /www/ 
+          dangerous-clean-slate: true
  
       # - name: Restart Node.js app via SSH
       #   uses: appleboy/ssh-action@v1.0.0

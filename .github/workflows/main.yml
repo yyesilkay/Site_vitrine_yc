@@ -17,11 +17,8 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Build API
-        run: npm run build:api:prod
-
-      - name: Build Frontend
-        run: npm run build:frontend:prod
+      - name: Build API and Frontend
+        run: npm run build:prod
       #- name: Copy .env file (optionnel, si tu veux versionner un .env.example)
       #  run: cp apps/api/.env dist/apps/api/.env
       
@@ -48,9 +45,9 @@ jobs:
       - name: Deploy Frontend
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
+          server: ${{ secrets.FTP_FRONT_SERVER }}
+          username: ${{ secrets.FTP_FRONT_USERNAME }}
+          password: ${{ secrets.FTP_FRONT_PASSWORD }}
           protocol: ftps
           port: 21
           local-dir: dist/apps/frontend/

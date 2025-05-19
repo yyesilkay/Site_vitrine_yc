@@ -19,17 +19,20 @@ jobs:
 
       - name: Build API and Frontend
         run: npm run build:prod
+
+      - name: Copy .htaccess to frontend dist
+        run: cp scripts/.htaccess dist/apps/frontend/.htaccess
+
       #- name: Copy .env file (optionnel, si tu veux versionner un .env.example)
       #  run: cp apps/api/.env dist/apps/api/.env
       
-      - name: Deploy to o2switch via FTP
+      - name: Deploy API via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_SERVER }}
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
           local-dir: dist/apps/api/
-          # server-dir: /www/ 
           dangerous-clean-slate: true
  
       # - name: Restart Node.js app via SSH
@@ -42,7 +45,7 @@ jobs:
       #       cd /www/api
       #       pm2 restart all
 
-      - name: Deploy Frontend
+      - name: Deploy Frontend via FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ${{ secrets.FTP_FRONT_SERVER }}
@@ -51,7 +54,6 @@ jobs:
           protocol: ftps
           port: 21
           local-dir: dist/apps/frontend/
-          # server-dir: /www/ 
           dangerous-clean-slate: true
        
 

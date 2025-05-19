@@ -20,6 +20,8 @@ jobs:
       - name: Build API
         run: npm run build:api:prod
 
+      - name: Build Frontend
+        run: npm run build:frontend:prod
       #- name: Copy .env file (optionnel, si tu veux versionner un .env.example)
       #  run: cp apps/api/.env dist/apps/api/.env
       
@@ -42,3 +44,17 @@ jobs:
       #     script: |
       #       cd /www/api
       #       pm2 restart all
+
+      - name: Deploy Frontend
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          port: 21
+          local-dir: dist/apps/frontend/
+          # server-dir: /www/ 
+          dangerous-clean-slate: true
+       
+
